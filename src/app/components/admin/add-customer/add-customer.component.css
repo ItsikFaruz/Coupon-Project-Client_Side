@@ -1,0 +1,13 @@
+p{
+    text-align: center;
+    color:rgb(101, 112, 175);
+    font-size: 25px;
+}
+div{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 22%;
+}
+input{
+    margin: 2%;
+}

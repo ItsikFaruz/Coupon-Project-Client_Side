@@ -1,0 +1,35 @@
+<br>
+<p>Add new coupon </p>
+
+
+<div>
+
+<input #category list="category" placeholder="category" class="form-control">
+<datalist id="category">
+    <option value="FOOD">
+    <option value="ELECTRICITY">
+    <option value="RESTURANT">
+    <option value="VACATION">
+    <option value="TRAVEL">
+    <option value="CLOTHING">
+    <option value="WORK">
+    <option value="CLEANING">
+    <option value="HOME">
+    <option value="GARDEN">
+    <option value="SPORT">
+</datalist>
+
+
+<form action="">
+    <input type="text" placeholder="title" [(ngModel)]="coupon.title" name="title" class="form-control">
+    <input type="text" placeholder="description" [(ngModel)]="coupon.description" name="description" class="form-control">
+    <input type="date" placeholder="startDate" [(ngModel)]="coupon.startDate" name="startDate" class="form-control">
+    <input type="date" placeholder="endDate" [(ngModel)]="coupon.endDate" name="endDate" class="form-control">
+    <input type="number" placeholder="amount" [(ngModel)]="coupon.amount" name="amount" class="form-control">
+    <input type="number" placeholder="price" [(ngModel)]="coupon.price" name="price" class="form-control">
+    <input type="text" placeholder="image" [(ngModel)]="coupon.image" name="image"class="form-control">
+  
+    <button class="btn btn-outline-primary"  (click)="addCoupon(category.value)" >add</button>
+
+</form>
+</div>

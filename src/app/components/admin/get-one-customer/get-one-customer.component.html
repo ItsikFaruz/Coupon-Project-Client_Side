@@ -1,0 +1,38 @@
+<br>
+<p>Get customer</p>
+<!-- <ng-template #loading>
+
+    <img width="70px" src="assets/loading.gif" alt="">
+</ng-template> -->
+
+<div>
+<form action="">
+    <input class="btn btn-primary text-primary bg-white" type="number" placeholder="customer id"
+        [(ngModel)]="customerId" name="id">
+</form>
+</div>
+
+<button class="btn btn-outline-primary"  (click)="getOneCustomer()">get customer</button>
+<br><br>
+<table class="table table-hover table-stripped" *ngIf="customer">
+
+    <thead class="thead-dark">
+
+        <tr>
+            <th>id</th>
+            <th>first name</th>
+            <th>last name</th>
+            <th>email</th>
+            <th>password</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{this.customer.id}}</td>
+            <td>{{this.customer.firstName}}</td>
+            <td>{{this.customer.lastName}}</td>
+            <td>{{this.customer.email}}</td>
+            <td>{{this.customer.password}}</td>
+        </tr>
+    </tbody>
+</table>

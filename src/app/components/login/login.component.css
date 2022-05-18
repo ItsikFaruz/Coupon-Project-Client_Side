@@ -1,0 +1,63 @@
+section{
+   
+    height: 100%;
+    width: 100%;
+    background-color:white;
+    text-align: center;
+    box-sizing: border-box;   
+
+    display: grid;
+    grid-template-columns: 2fr 12fr;
+    grid-template-rows: 6fr 23fr 1fr;
+    grid-template-areas: "header header"
+                          "main main"
+                          "footer footer";                   
+}
+
+header{
+    grid-area: header;
+    background-color:rgb(101, 112, 175);
+}
+aside{ 
+    
+   grid-area: aside;
+
+   
+}
+ main{
+  grid-area: main;
+    
+}
+ footer{
+   grid-area: footer;
+   background-color:rgb(101, 112, 175);
+   
+}   
+
+.con{
+  margin-left: 50%;
+  transform: translateX(-50%);
+  width: 22%;
+  color: rgb(101, 112, 175);
+}
+
+.form_icon{
+  font-size:  100px;
+  color:rgb(230, 155, 86);
+}
+.input-icon{
+  position: absolute;
+  right: 6px;
+  margin-top: 2.5%;
+  font-size: 18px;
+  padding-right: 10px;
+  
+}
+.login-form{
+  font-size: 23px;
+  font-weight: 700;
+  margin: 0 0 35px 0;
+  letter-spacing: 1px;
+
+}
+

@@ -1,0 +1,52 @@
+section{
+   
+    height: 100%;
+    width: 100%;
+    background-color:white;
+    text-align: center;
+    box-sizing: border-box;   
+
+    display: grid;
+    grid-template-columns: 2fr 12fr;
+    grid-template-rows: 6fr 23fr 1fr;
+    grid-template-areas: "header header"
+                          "aside main"
+                          "footer footer";                   ;
+}
+
+
+header{
+    grid-area: header;
+    background-color:rgb(101, 112, 175);
+}
+aside{ 
+    
+   grid-area: aside;
+ 
+   
+}
+ main{
+  grid-area: main;
+    
+}
+ footer{
+   grid-area: footer;
+   background-color:rgb(101, 112, 175);
+}   
+
+a{
+    font-size: 20px;
+    color:rgb(101, 112, 175);
+    display: block;
+    padding: 4%;
+    font-weight: 550;
+    text-align: left;
+    margin-left: 1%;
+    text-align: center;
+    margin-top: 1%;
+  
+}
+.active-link{
+   
+    font-weight: 800;
+}

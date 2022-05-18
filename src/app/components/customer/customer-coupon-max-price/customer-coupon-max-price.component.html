@@ -1,0 +1,45 @@
+<br>
+<p>Customer coupon up to: {{price.value}}$</p>
+
+<ng-template #loading>
+    <img width="70px" src="assets/loading.gif" alt="">
+</ng-template>
+
+<div>
+    <input #price type="number" placeholder="price"  class="form-control">
+
+    <button class="btn btn-outline-primary"  (click)="getCustomerCouponUpToMaxPrice(price.valueAsNumber)">Get coupons</button>
+    <br><br>
+
+    <table class="table table-hover table-stripped" *ngIf="coupons">
+
+        <thead class="thead-dark">
+            <tr>
+                <th>Id</th>
+                <th>Category</th>
+                <th>Title</th>
+                <th>description</th>
+                <th>startDate</th>
+                <th>endDate</th>
+                <!-- <th>amount</th> -->
+                <th>price</th>
+                <th>Company</th>
+                <th>image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of coupons">
+                <td>{{c.id}}</td>
+                <td>{{c.category}}</td>
+                <td>{{c.title}}</td>
+                <td>{{c.description}}</td>
+                <td>{{c.startDate}}</td>
+                <td>{{c.endDate}}</td>
+                <!-- <td>{{c.amount}}</td> -->
+                <td>{{c.price}}</td>
+                <td>{{c.company?.name}}</td>
+                <td> <app-thambnail imgSrc="assets/images/{{c.company?.name}}/{{c.image}}"></app-thambnail></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

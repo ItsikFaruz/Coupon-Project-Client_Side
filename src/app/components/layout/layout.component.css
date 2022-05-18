@@ -1,0 +1,35 @@
+section{
+   
+    height: 100%;
+    width: 100%;
+    background-color:white;
+    text-align: center;
+    box-sizing: border-box;   
+
+    display: grid;
+    grid-template-columns: 2fr 12fr;
+    grid-template-rows: 6fr 23fr 1fr;
+    grid-template-areas: "header header"
+                          "main main"
+                          "footer footer";                   ;
+}
+
+
+header{
+    grid-area: header;
+    background-color:rgb(101, 112, 175);
+}
+aside{ 
+    
+   grid-area: aside;
+
+   
+}
+ main{
+  grid-area: main;
+    
+}
+ footer{
+   grid-area: footer;
+   background-color:rgb(101, 112, 175);
+}   

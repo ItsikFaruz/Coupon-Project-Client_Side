@@ -1,0 +1,29 @@
+
+    <section>
+        <header>
+           <app-header></app-header> 
+           
+        </header>
+    
+        <aside >
+             <a class="btn btn-outline-primary"  routerLink="website-coupon" routerLinkActive="active-link">website coupons</a>
+             <!-- <a class="btn btn-outline-primary"  routerLink="pre-purchase" routerLinkActive="active-link">pre purchase</a> -->
+             <a class="btn btn-outline-primary"  routerLink="purchase-coupon" routerLinkActive="active-link">purchase coupon</a>
+             <a class="btn btn-outline-primary"  routerLink="customer-coupon" routerLinkActive="active-link">customer coupon</a>
+             <a class="btn btn-outline-primary"  routerLink="customer-coupon-max-price" routerLinkActive="active-link">customer coupon max price</a>
+             <a class="btn btn-outline-primary"  routerLink="customer-coupon-category" routerLinkActive="active-link">customer coupon category</a>
+             <a class="btn btn-outline-primary"  routerLink="customer-details" routerLinkActive="active-link">customer details</a>
+
+        </aside>
+        
+        <main>
+            <!-- <app-all-products></app-all-products> -->
+            <router-outlet></router-outlet>
+        </main>
+    
+        <footer>
+           <app-footer></app-footer>
+        </footer>
+    
+    </section>
+

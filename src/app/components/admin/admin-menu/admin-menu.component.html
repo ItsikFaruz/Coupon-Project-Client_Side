@@ -1,0 +1,30 @@
+
+    <section>
+        <header>
+           <app-header></app-header> 
+           
+        </header>
+    
+        <aside>
+            <a class="btn btn-outline-primary" routerLink="add-company" routerLinkActive="active-link">add company</a>
+            <a class="btn btn-outline-primary" routerLink="update-company" routerLinkActive="active-link">update company</a>
+            <a class="btn btn-outline-primary" routerLink="delete-company" routerLinkActive="active-link">delete company</a>
+            <a class="btn btn-outline-primary" routerLink="get-all-company" routerLinkActive="active-link">get all company</a>
+            <a class="btn btn-outline-primary" routerLink="get-one-company" routerLinkActive="active-link">get one company</a>
+            <a class="btn btn-outline-primary" routerLink="add-customer" routerLinkActive="active-link">add customer</a>
+            <a class="btn btn-outline-primary" routerLink="update-customer" routerLinkActive="active-link">update customer</a>
+            <a class="btn btn-outline-primary" routerLink="delete-customer" routerLinkActive="active-link">delete customer</a>
+            <a class="btn btn-outline-primary" routerLink="get-all-customer" routerLinkActive="active-link">get all customer</a>
+            <a class="btn btn-outline-primary" routerLink="get-one-customer" routerLinkActive="active-link">get one customer</a>
+            
+        </aside>
+        
+        <main>
+                    <router-outlet></router-outlet>
+        </main>
+    
+        <footer>
+           <app-footer></app-footer>
+        </footer>
+    
+    </section>

@@ -1,0 +1,63 @@
+<br>
+<p>Customer coupons by {{category.value}} category </p>
+
+
+<ng-template #loading>
+    <img width="70px" src="assets/loading.gif" alt="">
+</ng-template>
+
+<div>
+    <input #category list="category" placeholder="category" class="form-control">
+    <datalist id="category">
+        <option value="FOOD">
+        <option value="ELECTRICITY">
+        <option value="RESTURANT">
+        <option value="VACATION">
+        <option value="TRAVEL">
+        <option value="CLOTHING">
+        <option value="WORK">
+        <option value="CLEANING">
+        <option value="HOME">
+        <option value="GARDEN">
+        <option value="SPORT">
+    </datalist>
+
+    <button class="btn btn-outline-primary" (click)="getCustomerCouponByCategory(category.value)">Get all
+        coupons</button>
+    <br><br>
+
+    <table class="table table-hover table-stripped" *ngIf="coupons">
+
+        <thead class="thead-dark">
+            <tr>
+                <th>Id</th>
+                <th>Category</th>
+                <th>Title</th>
+                <th>description</th>
+                <th>startDate</th>
+                <th>endDate</th>
+                <!-- <th>amount</th> -->
+                <th>price</th>
+                <th>Company</th>
+                <th>image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of coupons">
+                <td>{{c.id}}</td>
+                <td>{{c.category}}</td>
+                <td>{{c.title}}</td>
+                <td>{{c.description}}</td>
+                <td>{{c.startDate}}</td>
+                <td>{{c.endDate}}</td>
+                <!-- <td>{{c.amount}}</td> -->
+                <td>{{c.price}}</td>
+                <td>{{c.company?.name}}</td>
+                <td>
+                    <app-thambnail imgSrc="assets/images/{{c.company?.name}}/{{c.image}}"></app-thambnail>
+                </td>
+
+            </tr>
+        <tbody>
+    </table>
+</div>

@@ -1,0 +1,16 @@
+<br>
+<p>Update customer</p>
+
+<div>
+<form action="">
+
+    <input type="number" placeholder="id" [(ngModel)]="customer.id" name="id"  class="form-control">
+    <input type="text" placeholder="firstName" [(ngModel)]="customer.firstName" name="firstName"  class="form-control">
+    <input type="text" placeholder="lastName" [(ngModel)]="customer.lastName" name="lastName"  class="form-control">
+    <input type="text" placeholder="email" [(ngModel)]="customer.email" name="email" class="form-control" >
+    <input type="text" placeholder="password" [(ngModel)]="customer.password" name="password"  class="form-control">
+    <button class="btn btn-outline-primary"   (click)="updateCustomer()" >update</button>
+
+
+</form>
+</div>

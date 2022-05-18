@@ -1,0 +1,30 @@
+
+
+ button{
+    font-size: small;
+    top: 10%;
+    position: relative;
+    width:4.5%;
+    min-width: fit-content;
+    display:  grid block  ; 
+    left: -45% 
+    
+    
+}
+button:nth-of-type(2){
+    display:  grid block  ; 
+    min-width: fit-content;
+    width:4.5%;
+    left: -45%;
+    top: 15%;
+
+} 
+
+p{
+    color: white;
+  
+}
+
+h1{
+    color: white;
+}
