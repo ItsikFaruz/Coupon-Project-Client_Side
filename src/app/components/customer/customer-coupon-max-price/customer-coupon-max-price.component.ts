@@ -10,33 +10,32 @@ import { CustomerService } from 'src/app/servicies/customer.service';
 })
 export class CustomerCouponMaxPriceComponent implements OnInit {
 
-  constructor(public customerService:CustomerService, private router:Router) { }
+  constructor(public customerService: CustomerService, private router: Router) { }
 
-  public coupons! : Coupon[];
+  public coupons!: Coupon[];
 
 
+  ngOnInit(): void { }
 
-  ngOnInit(): void {
-  }
-  public getCustomerCouponUpToMaxPrice(price:number){
+  public getCustomerCouponUpToMaxPrice(price: number) {
 
     let subscription = this.customerService.getAllCustomerCouponUpToMaxPrice(price).subscribe({
 
-      next:(arr)=>{
-        this.coupons=arr;
+      next: (arr) => {
+        this.coupons = arr;
       },
-      error:(e)=>{
+
+      error: (e) => {
         alert(e.error.message);
         this.router.navigate(["customer-menu"])
       },
-      complete:()=>{
+
+      complete: () => {
         subscription.unsubscribe;
       }
 
     });
 
   }
-
-
 
 }

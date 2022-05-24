@@ -9,32 +9,32 @@ import { CompanyService } from 'src/app/servicies/company.service';
   styleUrls: ['./company-coupon-price.component.css']
 })
 export class CompanyCouponPriceComponent implements OnInit {
- 
-  public coupons! : Coupon[];
-  
- 
-  constructor(public companyService:CompanyService, private router:Router) { }
 
-  ngOnInit(): void {
-  }
-  public getCompanyCouponUpToMaxPrice(price:number){
+  public coupons!: Coupon[];
+
+
+  constructor(public companyService: CompanyService, private router: Router) { }
+
+  ngOnInit(): void { }
+  
+  public getCompanyCouponUpToMaxPrice(price: number) {
 
     let subscription = this.companyService.getCompanyCouponUpToMaxPrice(price).subscribe({
-
-      next:(arr)=>{
-        this.coupons=arr;
+      next: (arr) => {
+        this.coupons = arr;
       },
-      error:(e)=>{
+
+      error: (e) => {
         alert(e.error.message);
         this.router.navigate(["company-menu"])
       },
-      complete:()=>{
+
+      complete: () => {
         subscription.unsubscribe;
       }
 
     });
 
   }
-
 
 }

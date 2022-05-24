@@ -8,26 +8,17 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-// public ifLogin: boolean = true;
+  constructor(private router: Router) { }
 
+  ngOnInit(): void { }
 
-  constructor(private router:Router ) { 
-  
-  }
-  
-  ngOnInit(): void {
-    
-  }
-
-  public loginNavigate(){
-   
+  public loginNavigate() {
     this.router.navigate(["login"]);
   }
-  public logout(){
+
+  public logout() {
     sessionStorage.removeItem("token")
     this.router.navigate(["layout"]);
   }
-
-
 
 }

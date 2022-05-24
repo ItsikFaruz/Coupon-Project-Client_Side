@@ -11,39 +11,30 @@ import { AdminService } from 'src/app/servicies/admin.service';
 })
 export class GetOneCompanyComponent implements OnInit {
 
-  
-  public company!:Company;
-  public companyId!:number;
+  public company!: Company;
+  public companyId!: number;
 
-  constructor(private adminService:AdminService , private router:Router) { }
+  constructor(private adminService: AdminService, private router: Router) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
-  public getOneCompany(){
-    let subscription =  this.adminService.getOneCompany(this.companyId).subscribe({
-
-      next:(company)=>{
+  public getOneCompany() {
+    let subscription = this.adminService.getOneCompany(this.companyId).subscribe({
+      next: (company) => {
         this.company = company;
-  
       },
-      error: (e)=>{
-    
+
+      error: (e) => {
         alert(e.error.message);
         this.router.navigate(["admin-menu"]);
-
       },
-      complete:()=>{
-        subscription.unsubscribe;
-        // this.router.navigate(["admin-menu"]);
 
+      complete: () => {
+        subscription.unsubscribe;
       }
-      
+
     });
 
   }
-
-
-
 
 }

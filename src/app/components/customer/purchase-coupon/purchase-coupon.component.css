@@ -1,15 +1,15 @@
-
-p{
+p {
     text-align: center;
-    color:rgb(101, 112, 175);
+    color: rgb(101, 112, 175);
     font-size: 25px;
 }
-div{
+
+div {
     margin-left: 50%;
     transform: translateX(-50%);
     width: 22%;
 }
-input{
+
+input {
     margin: 2%;
 }
-

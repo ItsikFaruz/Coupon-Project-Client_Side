@@ -11,38 +11,30 @@ import { AdminService } from 'src/app/servicies/admin.service';
 })
 export class GetOneCustomerComponent implements OnInit {
 
+  public customer!: Customer;
+  public customerId!: number;
 
-  public customer!:Customer;
-  public customerId!:number;
+  constructor(private adminService: AdminService, private router: Router) { }
 
-  constructor(private adminService:AdminService , private router:Router) { }
+  ngOnInit(): void { }
 
-  ngOnInit(): void {
-  }
-
-  public getOneCustomer(){
-    let subscription =  this.adminService.getOneCustomer(this.customerId).subscribe({
-
-      next:(customer)=>{
+  public getOneCustomer() {
+    let subscription = this.adminService.getOneCustomer(this.customerId).subscribe({
+      next: (customer) => {
         this.customer = customer;
-  
       },
-      error: (e)=>{
-        
+
+      error: (e) => {
         alert(e.error.message);
         this.router.navigate(["admin-menu"]);
 
       },
-      complete:()=>{
+      complete: () => {
         subscription.unsubscribe;
-        // this.router.navigate(["admin-menu"]);
-
       }
-      
+
     });
 
   }
-
-
 
 }

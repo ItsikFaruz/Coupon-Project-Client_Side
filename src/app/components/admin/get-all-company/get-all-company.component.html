@@ -2,30 +2,28 @@
 <p>All Company</p>
 
 <ng-template #loading>
-
     <img width="70px" src="assets/loading.gif" alt="">
 </ng-template>
 
-
 <br>
-<div *ngIf="companies; else loading" >
-<table class="table table-hover table-stripped">
-    <thead class="thead-dark">
-        
-        <tr>
-            <th>id</th>
-            <th>name</th>
-            <th>email</th>
-            <th>password</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let c of companies">
-            <td>{{c.id}}</td>
-            <td>{{c.name}}</td>
-            <td>{{c.email}}</td>
-            <td>{{c.password}}</td>
-        </tr>
-    </tbody>
-</table>
+
+<div *ngIf="companies; else loading">
+    <table class="table table-hover table-stripped">
+        <thead class="thead-dark">
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>email</th>
+                <th>password</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of companies">
+                <td>{{c.id}}</td>
+                <td>{{c.name}}</td>
+                <td>{{c.email}}</td>
+                <td>{{c.password}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

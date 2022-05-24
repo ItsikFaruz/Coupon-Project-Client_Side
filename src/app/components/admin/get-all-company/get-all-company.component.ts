@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { Company } from 'src/app/models/company.model';
 import { AdminService } from 'src/app/servicies/admin.service';
 
-
 @Component({
   selector: 'app-get-all-company',
   templateUrl: './get-all-company.component.html',
@@ -11,35 +10,27 @@ import { AdminService } from 'src/app/servicies/admin.service';
 })
 export class GetAllCompanyComponent implements OnInit {
 
-  public companies!:Company[];
+  public companies!: Company[];
 
-
-  constructor( private adminService:AdminService , private router:Router) { }
-
-
+  constructor(private adminService: AdminService, private router: Router) { }
 
   ngOnInit(): void {
-
-  
-    let subscription =  this.adminService.getAllCompany().subscribe({
-
-      next:(arr)=>{
+    let subscription = this.adminService.getAllCompany().subscribe({
+      next: (arr) => {
         this.companies = arr;
-  
       },
-      error: (e)=>{
-    
+
+      error: (e) => {
         alert(e.error.message);
         this.router.navigate(["admin-menu"]);
-
       },
-      complete:()=>{
-        subscription.unsubscribe;
-        // this.router.navigate(["admin-menu"]);
 
+      complete: () => {
+        subscription.unsubscribe;
       }
-      
+
     });
 
   }
+
 }

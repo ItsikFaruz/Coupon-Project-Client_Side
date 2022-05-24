@@ -14,7 +14,7 @@ export class PurchaseCouponComponent implements OnInit {
   public couponId!: number;
 
 
-  constructor(private customerservice: CustomerService, private router: Router ) { }
+  constructor(private customerservice: CustomerService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -22,29 +22,21 @@ export class PurchaseCouponComponent implements OnInit {
   public purchaeCoupon() {
 
     let subscription = this.customerservice.purchaseCoupon(this.couponId).subscribe({
-
       next: () => {
         alert("coupon: " + this.couponId + " purchased");
-
       },
+
       error: (e) => {
         alert(e.error.message);
         this.router.navigate(["customer-menu"]);
-
       },
-      complete: () => {
 
+      complete: () => {
         subscription.unsubscribe;
       }
 
     });
 
   }
-
-
-
-
-
-
 
 }

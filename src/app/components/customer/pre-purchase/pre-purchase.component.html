@@ -1,16 +1,13 @@
 <br>
 <p> {{coupon.description}}</p>
 
-<!-- <h3>name: <input  type="text"  [(ngModel)]="coupon.title">  </h3>
-<h3>price: <input  type="text" [(ngModel)]="coupon.price">  </h3>
-<h3>stock: <input type="text" [(ngModel)]="coupon.amount">  </h3> -->
-
 <ng-template #loading>
     <img width="70px" src="assets/loading.gif" alt="">
 </ng-template>
 
 <div>
-    <img *ngIf="coupon.image" [style.height.px]="imageWidth" src="./assets/images/{{coupon.company?.name}}/{{coupon.image}}" alt="pic">
+    <img *ngIf="coupon.image" [style.height.px]="imageWidth"
+        src="./assets/images/{{coupon.company?.name}}/{{coupon.image}}" alt="pic">
     <br><br>
     <div class="button">
         <button class="btn btn-outline-primary" (click)="increaseWidth()">+</button>
@@ -23,12 +20,3 @@
         <button class="btn btn-outline-success" (click)="purchaeCoupon()">BUY NOW</button>
     </div>
 </div>
-
-<!-- <app-thambnail imgSrc ="assets/images/{{coupon.company?.name}}/{{coupon.image}}"></app-thambnail> -->
-<!-- <img src="assets/images/{{}}{{coupon.image}}" alt="pic..."> -->
-<!-- <br>
-<button (click)="deleteProduct()">Delete This Product</button>
-<br>
-<input type="checkbox" [(ngModel)]="readOnly" > enable update
-<br>
-<button (click)="update()" [disabled]="readOnly" >update this product</button>  -->

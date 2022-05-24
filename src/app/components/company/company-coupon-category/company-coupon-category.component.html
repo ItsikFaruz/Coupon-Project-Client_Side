@@ -23,11 +23,9 @@
 
     <button class="btn btn-outline-primary" (click)="getCompanyCouponByCategory(category.value)">Get
         coupons</button>
-    <br><br>
-
+    <br>
+    <br>
     <table class="table table-hover table-stripped" *ngIf="coupons; else loading">
-
-
         <thead class="thead-dark">
             <tr>
                 <th>Id</th>
@@ -54,7 +52,6 @@
                 <td>
                     <app-thambnail imgSrc="assets/images/{{c.company?.name}}/{{c.image}}"></app-thambnail>
                 </td>
-
             </tr>
         </tbody>
     </table>

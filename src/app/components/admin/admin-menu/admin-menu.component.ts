@@ -9,10 +9,9 @@ import { LayoutComponent } from '../../layout/layout.component';
 })
 export class AdminMenuComponent implements OnInit {
 
-  constructor(private router:Router) { }
-  
+  constructor(private router: Router) { }
 
-  ngOnInit(): void {
-  }
+
+  ngOnInit(): void { }
 
 }

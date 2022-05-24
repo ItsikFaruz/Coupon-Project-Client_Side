@@ -1,5 +1,4 @@
 section{
-   
     height: 100%;
     width: 100%;
     background-color:white;
@@ -15,23 +14,20 @@ section{
 }
 
 header{
-    grid-area: header;
-    background-color:rgb(101, 112, 175);
+  grid-area: header;
+  background-color:rgb(101, 112, 175);
 }
-aside{ 
-    
-   grid-area: aside;
 
-   
+aside{    
+  grid-area: aside;
 }
  main{
-  grid-area: main;
-    
+  grid-area: main;   
 }
+
  footer{
-   grid-area: footer;
-   background-color:rgb(101, 112, 175);
-   
+  grid-area: footer;
+  background-color:rgb(101, 112, 175);  
 }   
 
 .con{
@@ -45,19 +41,19 @@ aside{
   font-size:  100px;
   color:rgb(230, 155, 86);
 }
+
 .input-icon{
   position: absolute;
   right: 6px;
   margin-top: 2.5%;
   font-size: 18px;
   padding-right: 10px;
-  
 }
+
 .login-form{
   font-size: 23px;
   font-weight: 700;
   margin: 0 0 35px 0;
   letter-spacing: 1px;
-
 }
 

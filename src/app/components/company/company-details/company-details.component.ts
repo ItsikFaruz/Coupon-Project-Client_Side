@@ -9,34 +9,31 @@ import { CompanyService } from 'src/app/servicies/company.service';
   styleUrls: ['./company-details.component.css']
 })
 export class CompanyDetailsComponent implements OnInit {
- 
- 
-  public company!:Company;
- 
- 
-  constructor(public companyService:CompanyService, private router:Router) { }
+
+
+  public company!: Company;
+
+
+  constructor(public companyService: CompanyService, private router: Router) { }
 
   ngOnInit(): void {
-  
-    let subscription =  this.companyService.getCompanyDetails().subscribe({
 
-      next:(company)=>{
+    let subscription = this.companyService.getCompanyDetails().subscribe({
+      next: (company) => {
         this.company = company;
-  
       },
-      error: (e)=>{
-        
+
+      error: (e) => {
         alert(e.error.message);
         this.router.navigate(["comapny-menu"]);
-
       },
-      complete:()=>{
-        subscription.unsubscribe;
-        // this.router.navigate(["admin-menu"]);
 
+      complete: () => {
+        subscription.unsubscribe;
       }
-      
+
     });
 
   }
+
 }

@@ -10,45 +10,42 @@ import { LoginService } from 'src/app/servicies/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  clyentType : string = "CUSTOMER";
-  
-  constructor(private LoginService: LoginService ,private router: Router ) { }
+  clyentType: string = "CUSTOMER";
+
+  constructor(private LoginService: LoginService, private router: Router) { }
 
 
-  ngOnInit(): void {
-  }
-  public login(email:string,password:string,clientType:string){
-    let subscription = this.LoginService.login(email,password,clientType).subscribe({
-      next: (token) =>{
+  ngOnInit(): void { }
+
+  public login(email: string, password: string, clientType: string) {
+    let subscription = this.LoginService.login(email, password, clientType).subscribe({
+      next: (token) => {
         console.log(token);
-        
-        sessionStorage.setItem('token',token.toString());
-        
-        if(clientType === "ADMINISTRATOR" ){
-      
+        sessionStorage.setItem('token', token.toString());
+
+        if (clientType === "ADMINISTRATOR") {
           this.router.navigate(["admin-menu"]);
-        } 
-        else if(clientType === "COMPANY" ){
-          
+        }
+
+        else if (clientType === "COMPANY") {
           this.router.navigate(["company-menu"]);
-        } 
-        else if(clientType === "CUSTOMER" ){
+        }
+
+        else if (clientType === "CUSTOMER") {
           this.router.navigate(["customer-menu"]);
-        } 
-        
+        }
+
       },
-      error:(e)=>{
-        
+      error: (e) => {
         let errJson = e.error;
         let errObj = JSON.parse(errJson);
         let errMsg = errObj.message;
         alert(errMsg);
-        
+
       },
-    complete:()=>{
-      
-      subscription.unsubscribe;
-    }      
+      complete: () => {
+        subscription.unsubscribe;
+      }
 
     });
 

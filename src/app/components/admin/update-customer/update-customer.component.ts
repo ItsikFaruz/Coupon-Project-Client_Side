@@ -11,32 +11,27 @@ import { AdminService } from 'src/app/servicies/admin.service';
 })
 export class UpdateCustomerComponent implements OnInit {
 
-  public customer : Customer = new Customer();
+  public customer: Customer = new Customer();
 
-  constructor(private adminService:AdminService , private router:Router   ) { }
+  constructor(private adminService: AdminService, private router: Router) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
-  public updateCustomer(){
+  public updateCustomer() {
     let subscription = this.adminService.updateCustomer(this.customer).subscribe({
-
-      next:(id)=>{
-       alert("customer: " + id + " updated");
-  
+      next: (id) => {
+        alert("customer: " + id + " updated");
       },
-      error: (e)=>{
-    
+
+      error: (e) => {
         alert(e.error.message);
         this.router.navigate(["admin-menu"]);
-
       },
-      complete:()=>{
+      complete: () => {
         subscription.unsubscribe;
         this.router.navigate(["admin-menu"]);
-
       }
-      
+
     });
 
   }

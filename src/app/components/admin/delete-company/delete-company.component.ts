@@ -9,35 +9,28 @@ import { AdminService } from 'src/app/servicies/admin.service';
 })
 export class DeleteCompanyComponent implements OnInit {
 
-  constructor(private  adminService: AdminService, private router:Router) { }
+  constructor(private adminService: AdminService, private router: Router) { }
 
-  public companyId! :number;
+  public companyId!: number;
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
-  public deleteCompany(){
-    let subscription = this. adminService.deleteCompany(this.companyId).subscribe({
-
-
-      next:(id)=>{
+  public deleteCompany() {
+    let subscription = this.adminService.deleteCompany(this.companyId).subscribe({
+      next: (id) => {
         alert("company " + id + " deleted");
-
       },
-      error:(e)=>{
+
+      error: (e) => {
         alert(e.error.message);
       },
-      complete:()=>{
+
+      complete: () => {
         subscription.unsubscribe;
       }
 
     });
 
-
   }
-
-
-
-
 
 }

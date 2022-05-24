@@ -10,30 +10,25 @@ import { AdminService } from 'src/app/servicies/admin.service';
 })
 export class AddCompanyComponent implements OnInit {
 
-  public company:Company = new Company();
+  public company: Company = new Company();
 
-  constructor(private adminService: AdminService, private router:Router ) { }
+  constructor(private adminService: AdminService, private router: Router) { }
 
+  ngOnInit(): void { }
 
-
-  ngOnInit(): void {
-
-  }
-  public addCompany (){
+  public addCompany() {
     let subscription = this.adminService.addCompany(this.company).subscribe({
-
-      next:(id)=>{
-        
-        alert("add company: " +id)
+      next: (id) => {
+        alert("add company: " + id)
         this.router.navigate(["admin-menu"])
-        
       },
-      error:(e)=>{
+
+      error: (e) => {
         alert(e.error.message);
         this.router.navigate(["admin-menu"])
-        
       },
-      complete:()=> {
+
+      complete: () => {
         subscription.unsubscribe;
         this.router.navigate(["admin-menu"])
       }
@@ -41,6 +36,5 @@ export class AddCompanyComponent implements OnInit {
     });
 
   }
-
 
 }

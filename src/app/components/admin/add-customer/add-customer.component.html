@@ -1,16 +1,14 @@
 <br>
 <p>Add new company </p>
 
-
 <div>
-<form action="">
-    <input type="text" placeholder="firstName" [(ngModel)]="customer.firstName" name="firstName" class="form-control" >
-    <input type="text" placeholder="lastName" [(ngModel)]="customer.lastName" name="lastName" class="form-control">
-    <input type="text" placeholder="email" [(ngModel)]="customer.email" name="email" class="form-control">
-    <input type="text" placeholder="password" [(ngModel)]="customer.password" name="password" class="form-control">
+    <form action="">
+        <input type="text" placeholder="firstName" [(ngModel)]="customer.firstName" name="firstName"
+            class="form-control">
+        <input type="text" placeholder="lastName" [(ngModel)]="customer.lastName" name="lastName" class="form-control">
+        <input type="text" placeholder="email" [(ngModel)]="customer.email" name="email" class="form-control">
+        <input type="text" placeholder="password" [(ngModel)]="customer.password" name="password" class="form-control">
 
-    <button class="btn btn-outline-primary" (click)="addCustomer()" >add</button>
-
-
-</form>
+        <button class="btn btn-outline-primary" (click)="addCustomer()">add</button>
+    </form>
 </div>

@@ -78,18 +78,18 @@ import { Page404Component } from './components/page404/page404.component';
     WebsiteCouponsComponent,
     PrePurchaseComponent,
     Page404Component,
-  
-  
-
 
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule
   ],
+
   providers: [],
   bootstrap: [RootComponent]
 })
+
 export class AppModule { }

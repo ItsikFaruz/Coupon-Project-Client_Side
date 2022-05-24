@@ -1,39 +1,32 @@
-
 <br>
 <p>All Custumer</p>
 
 <ng-template #loading>
-
     <img width="70px" src="assets/loading.gif" alt="">
 </ng-template>
 
-<!-- <br>
-<button class="btn btn-outline-primary" (click)="getAllCustomer()">get all customers</button>
-<br><br> -->
-
 <br>
+
 <div *ngIf="customers; else loading">
-<table class="table table-hover table-stripped" >
+    <table class="table table-hover table-stripped">
+        <thead class="thead-dark">
+            <tr>
+                <th>id</th>
+                <th>first name</th>
+                <th>last name</th>
+                <th>email</th>
+                <th>password</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of customers">
+                <td>{{c.id}}</td>
+                <td>{{c.firstName}}</td>
+                <td>{{c.lastName}}</td>
+                <td>{{c.email}}</td>
+                <td>{{c.password}}</td>
+            </tr>
+        </tbody>
 
-    <thead class="thead-dark">
-
-        <tr>
-            <th>id</th>
-            <th>first name</th>
-            <th>last name</th>
-            <th>email</th>
-            <th>password</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let c of customers">
-            <td>{{c.id}}</td>
-            <td>{{c.firstName}}</td>
-            <td>{{c.lastName}}</td>
-            <td>{{c.email}}</td>
-            <td>{{c.password}}</td>
-        </tr>
-    </tbody>
-
-</table>
+    </table>
 </div>

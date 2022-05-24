@@ -1,5 +1,4 @@
 section{
-   
     height: 100%;
     width: 100%;
     background-color:white;
@@ -14,22 +13,19 @@ section{
                           "footer footer";                   ;
 }
 
-
 header{
     grid-area: header;
     background-color:rgb(101, 112, 175);
 }
-aside{ 
-    
-   grid-area: aside;
+aside{    
+   grid-area: aside; 
+}
 
-   
-}
- main{
+main{
   grid-area: main;
-    
 }
- footer{
+
+footer{
    grid-area: footer;
    background-color:rgb(101, 112, 175);
 }   

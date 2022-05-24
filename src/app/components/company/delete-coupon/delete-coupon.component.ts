@@ -9,24 +9,23 @@ import { CompanyService } from 'src/app/servicies/company.service';
 })
 export class DeleteCouponComponent implements OnInit {
 
-  public couponId! : number
-  constructor(private companySercive:CompanyService, private router:Router) { }
+  public couponId!: number
+  constructor(private companySercive: CompanyService, private router: Router) { }
 
-  ngOnInit(): void {
-  }
-  public deleteCoupon (){
-  
+  ngOnInit(): void { }
+
+  public deleteCoupon() {
     let subscription = this.companySercive.deleteCoupon(this.couponId).subscribe({
-      
-      next:(id)=>{
-        alert("coupon: " +id + " deleted")
+      next: (id) => {
+        alert("coupon: " + id + " deleted")
       },
-      error:(e)=>{
+
+      error: (e) => {
         alert(e.error.message);
         this.router.navigate(["company-menu"])
-        
+
       },
-      complete:()=> {
+      complete: () => {
         subscription.unsubscribe;
         this.router.navigate(["company-menu"])
       }

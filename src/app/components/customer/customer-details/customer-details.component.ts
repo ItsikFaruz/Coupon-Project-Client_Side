@@ -11,33 +11,30 @@ import { CustomerService } from 'src/app/servicies/customer.service';
 })
 export class CustomerDetailsComponent implements OnInit {
 
-  public customer!:Customer;  
-  constructor(public customerService:CustomerService, private router:Router) { }
+  public customer!: Customer;
+  constructor(public customerService: CustomerService, private router: Router) { }
 
   ngOnInit(): void {
- 
-    let subscription =  this.customerService.getCustomeryDetails().subscribe({
 
-      next:(customer)=>{
+    let subscription = this.customerService.getCustomeryDetails().subscribe({
+
+      next: (customer) => {
         this.customer = customer;
-  
+
       },
-      error: (e)=>{
-        
+
+      error: (e) => {
         alert(e.error.message);
         this.router.navigate(["customer-menu"]);
 
       },
-      complete:()=>{
-        subscription.unsubscribe;
-        // this.router.navigate(["admin-menu"]);
 
+      complete: () => {
+        subscription.unsubscribe;
       }
-      
+
     });
 
   }
-
-
 
 }

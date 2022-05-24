@@ -10,31 +10,29 @@ import { CompanyService } from 'src/app/servicies/company.service';
 })
 export class CompanyCouponComponent implements OnInit {
 
-  public coupons! : Coupon[]; 
+  public coupons!: Coupon[];
 
-  
-  constructor(public companyService:CompanyService, private router:Router ) { }
+
+  constructor(public companyService: CompanyService, private router: Router) { }
 
   ngOnInit(): void {
     let subscription = this.companyService.getCompanyCoupon().subscribe({
-  
-      next:(arr)=>{
-        this.coupons=arr;
+      next: (arr) => {
+        this.coupons = arr;
       },
-      error:(e)=>{
+
+      error: (e) => {
         alert(e.error.message);
         this.router.navigate(["company-menu"])
       },
-      complete:()=>{
+
+      complete: () => {
         subscription.unsubscribe;
       }
-  
+
     });
   }
 
-  
-
-
-  }
+}
 
 

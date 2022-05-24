@@ -10,27 +10,27 @@ import { CompanyService } from 'src/app/servicies/company.service';
 })
 export class UpdateCouponComponent implements OnInit {
 
-  public coupon:Coupon = new Coupon();
+  public coupon: Coupon = new Coupon();
 
-  constructor(private companyService:CompanyService, private router:Router) { }
+  constructor(private companyService: CompanyService, private router: Router) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
-  public updateCoupon (category:string){
-    this.coupon.category=category;
+  public updateCoupon(category: string) {
+    this.coupon.category = category;
     let subscription = this.companyService.updateCoupon(this.coupon).subscribe({
-      
-      next:(id)=>{
-        alert("coupon: " +id + " updated")
+      next: (id) => {
+        alert("coupon: " + id + " updated")
         this.router.navigate(["company-menu"])
       },
-      error:(e)=>{
+
+      error: (e) => {
         alert(e.error.message);
         this.router.navigate(["company-menu"])
-        
+
       },
-      complete:()=> {
+
+      complete: () => {
         subscription.unsubscribe;
         this.router.navigate(["company-menu"])
       }
@@ -38,6 +38,7 @@ export class UpdateCouponComponent implements OnInit {
     });
 
   }
-  public setCategory(){}
+  
+  public setCategory() { }
 
 }

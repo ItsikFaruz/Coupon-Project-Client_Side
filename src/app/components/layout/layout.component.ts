@@ -9,9 +9,7 @@ import { LoginService } from 'src/app/servicies/login.service';
 })
 export class LayoutComponent implements OnInit {
 
-  constructor(private LoginService: LoginService ,private router: Router  ) { }
-
-
+  constructor(private LoginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
   }

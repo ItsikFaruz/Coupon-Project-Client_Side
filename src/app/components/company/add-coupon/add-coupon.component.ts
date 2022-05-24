@@ -12,28 +12,27 @@ import { CompanyService } from 'src/app/servicies/company.service';
 })
 export class AddCouponComponent implements OnInit {
 
-  public coupon:Coupon = new Coupon();
+  public coupon: Coupon = new Coupon();
 
 
-  constructor(private companyService:CompanyService, private router:Router) { }
+  constructor(private companyService: CompanyService, private router: Router) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
-  public addCoupon (category:string){
-    this.coupon.category=category;
+  public addCoupon(category: string) {
+    this.coupon.category = category;
     let subscription = this.companyService.addCoupon(this.coupon).subscribe({
-      
-      next:(id)=>{
-        alert("add coupon: " +id)
+      next: (id) => {
+        alert("add coupon: " + id)
         this.router.navigate(["company-menu"])
       },
-      error:(e)=>{
+
+      error: (e) => {
         alert(e.error.message);
         this.router.navigate(["company-menu"])
-        
       },
-      complete:()=> {
+
+      complete: () => {
         subscription.unsubscribe;
         this.router.navigate(["company-menu"])
       }
@@ -41,7 +40,6 @@ export class AddCouponComponent implements OnInit {
     });
 
   }
-  public setCategory(){}
-
+  public setCategory() { }
 
 }

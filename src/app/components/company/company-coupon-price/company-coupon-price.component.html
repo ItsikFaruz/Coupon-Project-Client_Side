@@ -8,9 +8,11 @@
 <div>
     <input #price type="number" placeholder="price" class="form-control">
 
-    <button class="btn btn-outline-primary" (click)="getCompanyCouponUpToMaxPrice(price.valueAsNumber)" >Get coupons</button>
-    <br><br>
-
+    <button class="btn btn-outline-primary" (click)="getCompanyCouponUpToMaxPrice(price.valueAsNumber)">Get
+        coupons</button>
+    <br>
+    <br>
+    
     <table class="table table-hover table-stripped" *ngIf="coupons; else loading">
 
         <thead class="thead-dark">
@@ -36,10 +38,10 @@
                 <td>{{c.endDate}}</td>
                 <td>{{c.amount}}</td>
                 <td>{{c.price}}</td>
-                <td> <app-thambnail imgSrc="assets/images/{{c.company?.name}}/{{c.image}}"></app-thambnail></td>
+                <td>
+                    <app-thambnail imgSrc="assets/images/{{c.company?.name}}/{{c.image}}"></app-thambnail>
+                </td>
             </tr>
         </tbody>
     </table>
 </div>
-
-

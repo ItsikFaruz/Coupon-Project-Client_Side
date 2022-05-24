@@ -10,22 +10,23 @@ import { CustomerService } from 'src/app/servicies/customer.service';
 })
 export class WebsiteCouponsComponent implements OnInit {
 
-  public coupons! : Coupon[];  
-  constructor(public customerService:CustomerService, private router:Router) { }
+  public coupons!: Coupon[];
+  constructor(public customerService: CustomerService, private router: Router) { }
 
   ngOnInit(): void {
-  
+
 
     let subscription = this.customerService.getAllProduct().subscribe({
-
-      next:(arr)=>{
-        this.coupons=arr;
+      next: (arr) => {
+        this.coupons = arr;
       },
-      error:(e)=>{
+
+      error: (e) => {
         alert(e.error.message);
         this.router.navigate(["layout"])
       },
-      complete:()=>{
+      
+      complete: () => {
         subscription.unsubscribe;
       }
 

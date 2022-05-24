@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Coupon } from 'src/app/models/coupon.model';
 import { CompanyService } from 'src/app/servicies/company.service';
 
@@ -10,25 +10,25 @@ import { CompanyService } from 'src/app/servicies/company.service';
 })
 export class CompanyCouponCategoryComponent implements OnInit {
 
-  public coupons! : Coupon[];
- 
+  public coupons!: Coupon[];
 
-  constructor(public companyService:CompanyService, private router:Router) { }
 
-  ngOnInit(): void {
-  }
-  public getCompanyCouponByCategory(category:string){
+  constructor(public companyService: CompanyService, private router: Router) { }
+
+  ngOnInit(): void { }
+  public getCompanyCouponByCategory(category: string) {
 
     let subscription = this.companyService.getCompanyCouponByCategory(category).subscribe({
-
-      next:(arr)=>{
-        this.coupons=arr;
+      next: (arr) => {
+        this.coupons = arr;
       },
-      error:(e)=>{
+
+      error: (e) => {
         alert(e.error.message);
         this.router.navigate(["company-menu"])
       },
-      complete:()=>{
+
+      complete: () => {
         subscription.unsubscribe;
       }
 
